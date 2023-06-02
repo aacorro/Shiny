@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,8 +11,13 @@ namespace Shiny
     {
         public int Discount = 15;
         public int OrderTotal {  get; set; }
-
         public string GreetMessage { get; set; }
+        public bool IsPlatinum { get; set; }
+
+        public Customer()
+        {
+            IsPlatinum = false;
+        }
 
         public string GreetAndCombineNames(string firstName, string lastName)
         {
