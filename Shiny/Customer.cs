@@ -7,26 +7,38 @@ using System.Threading.Tasks;
 
 namespace Shiny
 {
-    public class Customer
+    public interface ICustomer
     {
-        public int Discount = 15;
-        public int OrderTotal {  get; set; }
+        int Discount { get; set; }
+
+        int OrderTotal { get; set; }
+        string GreetMessage { get; set; }
+        bool IsPlatinum { get; set; }
+        string GreetAndCombineNames(string firstName, string lastName);
+        CustomerType GetCustomerDetails();
+    }
+    public class Customer : ICustomer
+    {
+        public int Discount { get; set; }
+
+        public int OrderTotal { get; set; }
         public string GreetMessage { get; set; }
         public bool IsPlatinum { get; set; }
-
         public Customer()
         {
+            Discount = 15;
             IsPlatinum = false;
         }
 
-        public string GreetAndCombineNames(string firstName, string lastName)
+
+        public string GreetAndCombineNames(string firstName, string LastName)
         {
             if (string.IsNullOrWhiteSpace(firstName))
             {
                 throw new ArgumentException("Empty First Name");
             }
 
-            GreetMessage =  $"Hello, {firstName} {lastName}";
+            GreetMessage = $"Hello, {firstName} {LastName}";
             Discount = 20;
             return GreetMessage;
         }
@@ -39,7 +51,6 @@ namespace Shiny
             }
             return new PlatinumCustomer();
         }
-
     }
 
     public class CustomerType { }

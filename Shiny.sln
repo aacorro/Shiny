@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShinyNUnitTest", "ShinyNUni
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShinyXUnit", "ShinyXUnit\ShinyXUnit.csproj", "{8210E1DC-8D00-4E60-A2CE-A67F945B18FA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BasicFundation", "BasicFundation", "{16968CD6-38DF-4A81-BB2E-50A67CD423CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7664F524-F856-4C4E-862C-806FC8F945CA} = {16968CD6-38DF-4A81-BB2E-50A67CD423CE}
+		{DFC335BE-00F4-40DA-A9A2-105A48487BB0} = {16968CD6-38DF-4A81-BB2E-50A67CD423CE}
+		{0CD28B71-ABAD-4EB1-9717-A576A00D455A} = {16968CD6-38DF-4A81-BB2E-50A67CD423CE}
+		{8210E1DC-8D00-4E60-A2CE-A67F945B18FA} = {16968CD6-38DF-4A81-BB2E-50A67CD423CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AD56655D-5F5B-4E88-9C2F-285C34358E90}
