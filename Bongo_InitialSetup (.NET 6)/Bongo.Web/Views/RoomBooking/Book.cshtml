@@ -1,41 +1,52 @@
 ﻿@model StudyRoomBooking
 
-<h1 class="display-4">Book a Study Room</h1>
-<p class="lead"> for a full day!</p>
 
-<form method="post">
-
-    <div class="form-group">
-        <label asp-for="FirstName" class="control-label"></label>
-        <input asp-for="FirstName" class="form-control">
-        <span asp-validation-for="FirstName" class="text-danger"></span>
+<div class="d-flex aligns-items-center justify-content-center card my-5">
+    <div class="card display-5 text-center bg-light">
+        <h1 class="display-4 text-center ">Book a Study Room</h1>
+        <h5 class="text-center"> <b>...for the whole day!</b></h5>
     </div>
 
-    <div class="form-group">
-        <label asp-for="LastName" class="control-label"></label>
-        <input asp-for="LastName" class="form-control">
-        <span asp-validation-for="LastName" class="text-danger"></span>
-    </div>
+    <div class="card-body">
+        <form method="post">
 
-    <div class="form-group">
-        <label asp-for="Email" class="control-label"></label>
-        <input asp-for="Email" class="form-control">
-        <span asp-validation-for="Email" class="text-danger"></span>
-    </div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control">
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
 
-    <div class="form-group">
-        <label asp-for="Date" class="control-label"></label>
-        <input asp-for="Date" asp-format="{0:dd/MM/yyyy}" class="form-control">
-        <span asp-validation-for="Date" class="text-danger"></span>
-    </div>
-    @if ((string)ViewData["Error"] != null) { 
-        <p class="text-danger">
-            @ViewData["Error"].ToString()
-        </p>
-    }
-    <button type="submit" class="btn btn-primary">Book Study Room</button>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control">
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
 
-</form>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control">
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" asp-format="{0:dd/MM/yyyy}" class="form-control">
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+            @if ((string)ViewData["Error"] != null) { 
+                <p class="text-danger">
+                    @ViewData["Error"].ToString()
+                </p>
+            }
+            <button type="submit" class="btn btn-dark my-2">Book Study Room</button>
+
+        </form>
+    </div>
+</div>
+
+
+
+
 @section Scripts{
 
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

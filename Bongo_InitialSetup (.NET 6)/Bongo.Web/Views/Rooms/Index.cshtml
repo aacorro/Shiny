@@ -1,45 +1,47 @@
 ﻿@model IEnumerable<StudyRoom>
 
-<br />
-<div class="backgroundWhite">
-            <h2 class="text-info"> Room List</h2>
-    <br />
-    <div>
-        @if (Model.Count() > 0)
-        {
-            <table class="table table-striped border">
-                <tr class="table-secondary">
-                    <th>
-                        Id
-                    </th>
-                    <th>
-                        Room Number
-                    </th>
-                    <th>
-                        Room Name
-                    </th>
-                   
-                </tr>
-                @foreach (var item in Model)
+<div class="d-flex aligns-items-center justify-content-center card my-5">
+    <div class="card text-center bg-light">
+        <p class="text-black display-4"> Room List</p>
+    </div>
+
+    <div class="card-body">
+                @if (Model.Count() > 0)
                 {
-            <tr>
-                <td>
-                    @item.Id
-                </td>
-                <td>
-                    @item.RoomNumber
-                </td>
-                <td>
-                    @item.RoomName
-                </td>
+                    <table class="table table-striped border">
+                        <tr class="table-secondary">
+                            <th>
+                                Id
+                            </th>
+                            <th>
+                                Room Number
+                            </th>
+                            <th>
+                                Room Name
+                            </th>
+                   
+                        </tr>
+                        @foreach (var item in Model)
+                        {
+                    <tr>
+                        <td>
+                            @item.Id
+                        </td>
+                        <td>
+                            @item.RoomNumber
+                        </td>
+                        <td>
+                            @item.RoomName
+                        </td>
                 
-            </tr>
+                    </tr>
+                        }
+                    </table>
                 }
-            </table>
-        }
-        else
-        {
-            <p>No category exists...</p>
-        }
+                else
+                {
+                    <p>No category exists...</p>
+                }
+            </div>
     </div>
 </div>
