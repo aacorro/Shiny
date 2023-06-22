@@ -1,10 +1,10 @@
-name: Build and deploy .NET Core application to Web App ShinyUnitTesting
+name: Build and deploy .NET Core application to Web App ShinyUnitTestings
 on:
   push:
     branches:
     - master
 env:
-  AZURE_WEBAPP_NAME: ShinyUnitTesting
+  AZURE_WEBAPP_NAME: ShinyUnitTestings
   AZURE_WEBAPP_PACKAGE_PATH: Bongo_InitialSetup (.NET 6)\Bongo.Web\published
   CONFIGURATION: Release
   DOTNET_CORE_VERSION: 7.0.x
@@ -44,5 +44,5 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
-        publish-profile: ${{ secrets.ShinyUnitTesting_DFF3 }}
+        publish-profile: ${{ secrets.ShinyUnitTestings_BE24 }}
         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
